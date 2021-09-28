@@ -19,7 +19,8 @@ collections:
           widget: list,
         }
       - { label: "Tag → コンマ,区切り,入力", name: "tags", widget: list }
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", required: true }
+      - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Date", name: "date", widget: "datetime" }
       - {
           label: "Published",
