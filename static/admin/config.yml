@@ -2,8 +2,7 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/static/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
-# public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 collections:
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Posts" # Used in the UI
@@ -35,9 +34,9 @@ collections:
           default: true,
         }
       - {
-          label: "Cover Image",
+          label: "Cover Image (/images/uploads/ + ファイル名)",
           name: "cover_image",
-          widget: "string",
+          widget: "image",
           required: false,
         }
       - { label: "Description", name: "description", widget: "string" }
