@@ -3,7 +3,7 @@ title: googleサーチコンソールってなに？
 author: しゅーいっち
 date: 2019-11-07T01:46:15+00:00
 slug: google-search-console/
-cover_image: Screen-Shot-2019-11-07-at-10.44.04.png
+cover_image: /images/uploads/Screen-Shot-2019-11-07-at-10.44.04.png
 published: true
 categories:
   - 技術
