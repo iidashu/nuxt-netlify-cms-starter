@@ -36,6 +36,11 @@ query {
           title
           path
         }
+        categories {
+          id
+          title
+          path
+        }
       }
     }
   }

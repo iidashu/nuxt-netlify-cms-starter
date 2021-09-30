@@ -5,9 +5,9 @@
         <Logo v-if="showLogo" />
       </div>
 
-      <div class="header__right">
+      <!-- <div class="header__right">
         <ToggleTheme />
-      </div>
+      </div> -->
     </header>
 
     <main class="main">
@@ -16,7 +16,7 @@
 
     <footer class="footer">
       <span class="footer__copyright"
-        >Copyright © {{ new Date().getFullYear() }}.
+        >Copyright © {{ new Date().getFullYear() }}
       </span>
     </footer>
   </div>
@@ -63,6 +63,7 @@ export default {
 .main {
   margin: 0 auto;
   padding: 1.5vw 15px 0;
+  color: #335;
 }
 
 .footer {

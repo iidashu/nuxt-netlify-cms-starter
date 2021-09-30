@@ -5,12 +5,13 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'TEST BLOG',
-  siteDescription: 'テストのための最高のブログをGridsomeで作ってみよう',
+  siteName: 'Backham BLOG',
+  siteDescription: 'モバイルVR、AR、フロントエンド開発をしている株式会社バッカムのブログです',
 
   templates: {
     Post: "/:year/:month/:day/:slug",
-    Tag: '/tag/:id'
+    Tag: '/tag/:id',
+    Category: '/category/:id',
   },
 
   plugins: [
@@ -24,6 +25,10 @@ module.exports = {
           // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
           tags: {
             typeName: 'Tag',
+            create: true
+          },
+          categories: {
+            typeName: 'Category',
             create: true
           }
         }

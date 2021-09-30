@@ -1,12 +1,12 @@
 <template>
-  <div class="post-tags">
+  <div class="post-categories">
     <g-link
-      class="post-tags__link"
-      v-for="tag in post.tags"
-      :key="tag.id"
-      :to="tag.path"
+      class="post-categories__link"
+      v-for="category in post.categories"
+      :key="category.id"
+      :to="category.path"
     >
-      <span>#</span> {{ tag.title }}
+      <span>@</span> {{ category.title }}
     </g-link>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
-.post-tags {
+.post-categories {
   margin: 1em 0 0;
 
   &__link {
@@ -26,10 +26,10 @@ export default {
     font-size: 0.8em;
     color: currentColor;
     text-decoration: none;
-    // background-color: var(--bg-color);
+    background-color: var(--bg-color);
     color: currentColor !important; //Todo: remove important;
-    padding: 0.2em;
-    // border-radius: var(--radius);
+    padding: 0.5em;
+    border-radius: var(--radius);
   }
 }
 </style>

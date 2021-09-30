@@ -20,6 +20,7 @@
       <div class="post__content" v-html="$page.post.content" />
 
       <div class="post__footer">
+        <PostCategory :post="$page.post" />
         <PostTags :post="$page.post" />
       </div>
     </div>
@@ -28,13 +29,14 @@
       <!-- Add comment widgets here -->
     </div>
 
-    <Author class="post-author" />
+    <Author class="post-author" :show-title="true" />
   </Layout>
 </template>
 
 <script>
 import PostMeta from "~/components/PostMeta";
 import PostTags from "~/components/PostTags";
+import PostCategory from "~/components/PostCategory";
 import Author from "~/components/Author.vue";
 
 export default {
@@ -42,6 +44,7 @@ export default {
     Author,
     PostMeta,
     PostTags,
+    PostCategory,
   },
   metaInfo() {
     return {
@@ -69,6 +72,11 @@ query Post ($id: ID!) {
       title
       path
     }
+    categories {
+      id
+      title
+      path
+    }    
     description
     content
     cover_image
@@ -129,5 +137,9 @@ query Post ($id: ID!) {
 
 .post-author {
   margin-top: calc(var(--space) / 2);
+}
+
+.post-title__text {
+  color: #335;
 }
 </style>
