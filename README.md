@@ -1,41 +1,48 @@
 # Netlify CMS template for Gridsome
 
-> A simple, hackable & minimalistic starter for Gridsome that uses Netlify CMS for content.
+## ローカル起動
+`yarn develop` → `localhost:8080`
 
-## Features
-- Beautiful and simple design.
-- Markdown for content.
-- Tags support.
-- Dark / Light toggle.
-- CSS variables, SCSS & BEM for styling.
-- 100, 100, 100, 100 score on Google Lighthouse.
-- Uses same front-matter fields as Dev.to.
 
-## Demo URL
+## deploy
+- github/bitbucket経由でnetlifyにpush
 
-https://netlifycms-gridsome.suits.at/
+## netlify CMSの設定（見た目、要素など）
+`static/admin/config.yml`
 
-## Deploy to Netlify
+## netlifyの設定で CMSを有効にする
+IdentityをONにする
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/suits-at/netlifycms-gridsome)
+https://qiita.com/asahi13/items/ad514eb6cd759be74af2#netlify-identity%E3%81%AE%E8%A8%AD%E5%AE%9A
 
-### Enable Identity
 
-Enable the netlify identity service at https://app.netlify.com/sites/YOUR-SITE/settings/identity. For exact instructions see https://www.netlify.com/docs/identity/. You might want to enable Git Gateway as well https://www.netlify.com/docs/git-gateway/. 
+## CMSログイン
 
-### Edit content
+`yourwebsite.com/admin`
 
-Access `yourwebsite.com/admin`, e.g. `netfliycms-gridsome.netlify.com/admin` or locally this might be  `localhost:3000/admin`.
+local `localhost:3000/admin`
 
-## Install locally
+- 招待無しでユーザ登録可能な状態にしておけば、自分のgoogleアカウントでユーザ登録できる
 
-### 1. Install Gridsome CLI tool if you don't have
 
-`npm install --global @gridsome/cli`
+## ルーティング
+`gridsome.config.js`
 
-### 2. Install this starter
+```
+  templates: {
+    Post: "/:year/:month/:day/:slug",
+    Tag: '/tag/:id',
+    Category: '/category/:id',
+  },
+ ```
+↓
 
-1. `gridsome create my-gridsome-site https://github.com/suits-at/netlifycms-gridsome`
-2. `cd my-gridsome-site` to open folder
-3. `gridsome develop` to start local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+単一記事
+`http://localhost:8080/2021/09/27/backham-intro5/`
+
+カテゴリ記事リスト
+`http://localhost:8080/category/PR/`
+
+タグ記事リスト
+`http://localhost:8080/tag/mahoumake/`
+
